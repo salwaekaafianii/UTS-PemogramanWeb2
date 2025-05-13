@@ -1,4 +1,4 @@
-<x-layouts.app :title="__('Categories')">
+<x-layouts.app :title="('Categories')">
     <div class="relative mb-6 w-full">
         <flux:heading size="xl">Update Product Categories</flux:heading>
         <flux:subheading size="lg" class="mb-6">Manage data Product Categories</flux:heading>
@@ -11,7 +11,7 @@
         <flux:badge color="red" class="mb-3 wf-full">{{session()->get('errorMessage')}}</flux:badge>
     @endif
 
-    <form action="{{ route('categories.update', $category->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('dashboard.categories.update', $category->id) }}" method="post" enctype="multipart/form-data">
         @method('patch')
         @csrf
         
@@ -33,7 +33,7 @@
 
         <div class="mt-4">
             <flux:button type="submit" variant="primary">Update</flux:button>
-            <flux:link href="{{ route('categories.index') }}" variant="ghost" class="ml-3">Kembali</flux:link>
+            <flux:link href="{{ route('dashboard.categories.index') }}" variant="ghost" class="ml-3">Kembali</flux:link>
         </div>
     </form>
 </x-layouts.app>

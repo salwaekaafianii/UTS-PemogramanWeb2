@@ -7,17 +7,17 @@
         <flux:sidebar sticky stashable class="border-r border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
             <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
 
-            <a href="{{ route('dashboard') }}" class="me-5 flex items-center space-x-2 rtl:space-x-reverse" wire:navigate>
+            <a href="{{ route('dashboard.index') }}" class="me-5 flex items-center space-x-2 rtl:space-x-reverse" wire:navigate>
                 <x-app-logo />
             </a>
 
             <flux:navlist variant="outline">
-                <flux:navlist.group :heading="__('Menu')" class="grid">
-                    <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
+                <flux:navlist.group :heading="('Menu')" class="grid">
+                    <flux:navlist.item icon="home" :href="route('dashboard.index')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
 
-                    <flux:navlist.item icon="clipboard-document-list" :href="route('categories.index')" :current="request()->routeIs('categories.index')" wire:navigate>{{ __('Categories') }}</flux:navlist.item>
+                    <flux:navlist.item icon="clipboard-document-list" :href="route('dashboard.categories.index')" :current="request()->routeIs('categories.index')" wire:navigate>{{ __('Categories') }}</flux:navlist.item>
 
-                    <flux:navlist.item icon="list-bullet" :href="route('products')" :current="request()->routeIs('products')" wire:navigate>{{ __('Products') }}</flux:navlist.item>
+                    <flux:navlist.item icon="list-bullet" :href="route('dashboard.products.index')" :current="request()->routeIs('products')" wire:navigate>{{ __('Products') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
             

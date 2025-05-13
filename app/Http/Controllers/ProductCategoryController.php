@@ -146,7 +146,7 @@ class ProductCategoryController extends Controller
         return redirect()->back()
             ->with(
                 [
-                    'successMessage'=>'Data Berhasil Disimpan'
+                    'successMessage'=>'Data Berhasil Diperbarui'
                 ]
             );
     }
